@@ -1,0 +1,59 @@
+{% extends 'store/layout.html' %}
+{% load static %}
+{% block content %}
+<body>
+
+  <div class="site-wrap">
+
+
+  
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="{% url 'home' %}">Home</a> <span class="mx-2 mb-0">/</span> <a
+              href="{% url 'store' %}">Store</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{product.name}}</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 mr-auto">
+            <div class="border text-center">
+              <img src="{{product.imageURL}}" alt="Image" class="img-fluid p-5">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-black">{{product.name}}</h2>
+            <p>{{product.discription}}.</p>
+            
+
+            <p><del>$95.00</del>  <strong class="text-primary h4">{{product.price}}</strong></p>
+
+          
+            
+            <button data-product={{product.id}} data-action="add" class="buy-now btn btn-sm height-auto px-4 py-3 btn-success update-cart">Add To Cart </button>
+
+          
+
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-image overlay" style="background-image: url('images/hero_bg_2.jpg');">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+         <div class="col-lg-7">
+           <h3 class="text-white">Sign up for discount up to 55% OFF</h3>
+           <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam.</p>
+           <p class="mb-0"><a href="#" class="btn btn-outline-white">Sign up</a></p>
+         </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock content %}
